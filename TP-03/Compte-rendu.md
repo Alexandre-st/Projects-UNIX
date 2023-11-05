@@ -101,3 +101,40 @@ La touche **espace** permet d'avancer d'une page.
 - Comment remonter d'une page ?
 
 La touche **b** permet de remonter d'une page.
+
+###
+
+**notes.sh**
+
+```sh
+echo -n "Veuillez saisir une note : "
+read note
+
+if [[ "$note" -ge 16 && "$note" -le 20 ]]
+then
+  echo "Très bien"
+elif [[ "$note" -ge 14 && "$note" -le 16 ]]
+then
+  echo "Bien"
+elif [[ "$note" -ge 12 && "$note" -le 14 ]]
+  then
+  echo "Assez bien"
+elif [[ "$note" -ge 10 && "$note" -le 12 ]]
+then
+  echo "Moyen"
+else
+  echo "Insuffisant"
+fi
+
+while true; do
+  echo -en "Appuyer sur q pour quitter : "
+  read input
+
+  if [[ "$input" = "q" ]] || [[ "$input" = "Q" ]]
+  then
+    break
+  else
+    echo "Saisie invalide, appuyer sur q."
+  fi
+done
+```
